@@ -2,7 +2,7 @@
 PROJECT_PATH=$1
 REPO_NAME=$2
 DESCRIPTION=$3
-USERNAME=karlosmartines
+USERNAME=$(grep 'name' ~/.gitconfig | sed 's/^.*= //')
 cd $PROJECT_PATH
 mkdir $REPO_NAME
 cd $REPO_NAME
