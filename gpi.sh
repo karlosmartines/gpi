@@ -2,6 +2,17 @@
 PROJECT_PATH=$1
 REPO_NAME=$2
 DESCRIPTION=$3
+if [[ -z "$PROJECT_PATH" ]]
+then
+    echo "PROJECT_PATH variable is empty. Exiting." && exit
+elif [[ -z "$REPO_NAME" ]]
+then
+    echo "REPO_NAME variable is empty. Exiting." && exit
+elif [[ -z "$DESCRIPTION" ]]
+then
+    echo "DESCRIPTION variable is empty. Exiting." && exit
+fi
+
 USERNAME=$(grep 'name' ~/.gitconfig | sed 's/^.*= //')
 cd $PROJECT_PATH
 mkdir $REPO_NAME
